@@ -33,7 +33,7 @@ export async function sendMessage(
   newMessage: string,
 ): Promise<string> {
   const model = ai.models.generateContentStream({
-    model: "gemini-2.5-pro",
+    model: "gemini-1.5-flash",
     contents: [
       ...history.map((msg) => ({
         role: msg.role,
@@ -57,7 +57,7 @@ export async function sendMessageStream(
 ): Promise<string> {
   try {
     const stream = await ai.models.generateContentStream({
-      model: "gemini-2.5-pro",
+      model: "gemini-1.5-flash",
       contents: [
         ...history.map((msg) => ({
           role: msg.role,
